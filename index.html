@@ -8,6 +8,185 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hedy Lamarr Legacy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+  
+      body {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #fefaf6;
+      }
+  
+      h1, h2, h3 {
+      font-family: 'Josefin Sans', sans-serif;
+      color: #fff;
+      font-weight: 700;
+      margin: 20px 0;
+    }
+  
+      .hero {
+        background: url('https://di-uploads-pod36.dealerinspire.com/everettcadillac/uploads/2023/03/Hedi-Lamar-math.jpg') center/cover no-repeat;
+        color: #fff;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+      }
+  
+      .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1;
+    }
+  
+      .hero-content {
+        max-width: 800px;
+        margin: auto;
+        padding: 40px 20px;
+        position: relative;
+        z-index: 2;
+      }
+  
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background: #f5f2ed;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+  
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+  
+      .nav-links a {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+  
+      .nav-links a:hover {
+        color: #b98f6e;
+      }
+  
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+      }
+  
+      .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #b98f6e;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background 0.3s, color 0.3s;
+      }
+  
+      .btn:hover {
+        background: #8b6f50;
+        color: #fff;
+      }
+  
+      .section {
+        padding: 60px 20px;
+      }
+  
+      .bg-light {
+        background: #f9f6f1;
+      }
+  
+      .container {
+        max-width: 1000px;
+        margin: auto;
+      }
+  
+      .footer {
+        text-align: center;
+        padding: 20px;
+        background: #1a1a1a;
+        color: #fff;
+      }
+  
+      .work-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+  
+      .work-list div {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: transform 0.3s;
+      }
+  
+      .work-list div:hover {
+        transform: scale(1.02);
+      }
+  
+      .work-list img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+  
+      .work-content {
+        padding: 20px;
+      }
+  
+      table {
+        border: 1px solid #ccc;
+        margin-top: 20px;
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+  
+      th, td {
+        border: 1px solid #ccc;
+        padding: 12px 16px;
+      }
+  
+      thead {
+        background: #b98f6e;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
 </head>
 <body>
   <header class="navbar">
@@ -32,65 +211,89 @@
     </div>
   </section>
 
-  <section id="films" class="section container">
-    <h2>Selected Filmography</h2>
-    <div class="work-list">
-      <div class="work-item">
-        <img src="https://via.placeholder.com/400x250" alt="Algiers poster">
-        <div class="work-content">
-          <h3>Algiers (1938)</h3>
-          <p>Hedy's first Hollywood film opposite Charles Boyer.</p>
-        </div>
-      </div>
-      <div class="work-item">
-        <img src="https://via.placeholder.com/400x250" alt="Samson and Delilah poster">
-        <div class="work-content">
-          <h3>Samson and Delilah (1949)</h3>
-          <p>Cecil B. DeMille's biblical epic starring Lamarr as Delilah.</p>
-        </div>
-      </div>
-      <div class="work-item">
-        <img src="https://via.placeholder.com/400x250" alt="The Female Animal poster">
-        <div class="work-content">
-          <h3>The Female Animal (1957)</h3>
-          <p>One of her final film roles, opposite George Nader.</p>
-        </div>
+<section id="films" class="section container">
+  <h2>Selected Filmography</h2>
+  <div class="work-list">
+    <div >
+      <img src="https://www.hedylamarr.com/wp-content/uploads/2020/09/Algiers-1938-520x777.jpg" alt="Algiers poster">
+      <div class="work-content">
+        <h3>Algiers (1938)</h3>
+        <p>Hedy Lamarr stars as Gaby alongside Charles Boyer in her Hollywood debut.</p>
       </div>
     </div>
-  </section>
+    <div >
+      <img src="https://www.hedylamarr.com/wp-content/uploads/2020/09/Boom-Town-1940-520x784.jpg" alt="Boom Town poster">
+      <div class="work-content">
+        <h3>Boom Town (1940)</h3>
+        <p>A drama about oil wildcatters starring Clark Gable, Spencer Tracy, and Hedy Lamarr.</p>
+      </div>
+    </div>
+    <div >
+      <img src="https://www.hedylamarr.com/wp-content/uploads/2020/09/White-Cargo-1942-520x787.jpg" alt="White Cargo poster">
+      <div class="work-content">
+        <h3>White Cargo (1942)</h3>
+        <p>Lamarr plays Tondelayo in a melodrama set in an African rubber plantation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
 
   <section id="inventor" class="section bg-light">
     <div class="container">
       <h2>Inventor</h2>
-      <p>Beyond the screen, Lamarr co-invented technology for "secret communication" during World War II.</p>
-      <ul>
-        <li>«Системы секретной связи»</li>
-        <li><a href="https://it.wikipedia.org/wiki/Frequency-hopping_spread_spectrum" target="_blank">frequency-hopping spread spectrum</a></li>
-      </ul>
+      <p>Beyond the screen, Lamarr co-invented a technology known as <strong>frequency-hopping spread spectrum</strong>.</p>
+      <p>This system was designed to avoid the interception of radio signals by constantly switching frequencies. The idea came during World War II and was meant to make torpedo control signals immune to jamming. Hedy collaborated with composer George Antheil, using the concept of piano rolls to synchronize signal jumps. The technique was later patented in 1942 as "Secret Communication System" (US Patent 2,292,387).</p>
+      <img src="images/image.png" alt="Patent illustration" style="max-width:100%;margin-top:20px;border-radius:8px;">
     </div>
   </section>
 
   <section id="knowledge" class="section">
     <div class="container">
       <h2>Knowledge Organization</h2>
-      <p><a href="https://docs.google.com/document/d/1PH6LHb-je4152xxLe3DGtJxfBR2iFc9qLM4qaPaflmw/edit?tab=t.0" target="_blank">Project notes on organizing information</a></p>
+      <p>Project notes, metadata models and conceptual design are part of this section.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Type</th>
+            <th>Provider</th>
+            <th>Standard</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Algiers (1938)</td><td>Film</td><td>IMDb</td><td>Schema.org</td></tr>
+          <tr><td>Samson and Delilah (1949)</td><td>Film</td><td>Library of Congress</td><td>MARC21</td></tr>
+          <tr><td>Secret Communication System</td><td>Patent</td><td>USPTO</td><td>XML</td></tr>
+          <tr><td>Ecstasy (1933)</td><td>Film</td><td>Deutsche Kinemathek</td><td>CIDOC CRM</td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
   <section id="gallery" class="section container">
     <h2>Gallery</h2>
     <div class="work-list">
-      <img src="https://via.placeholder.com/200x150" alt="Placeholder image">
-      <img src="https://via.placeholder.com/200x150" alt="Placeholder image">
-      <img src="https://via.placeholder.com/200x150" alt="Placeholder image">
-      <img src="https://via.placeholder.com/200x150" alt="Placeholder image">
-      <img src="https://via.placeholder.com/200x150" alt="Placeholder image">
+      <img src="images/image.png" alt="Hedy Lamarr image">
+      <img src="images/image.png" alt="Hedy Lamarr image">
+      <img src="images/image.png" alt="Hedy Lamarr image">
+      <img src="images/image.png" alt="Hedy Lamarr image">
+      <img src="images/image.png" alt="Hedy Lamarr image">
     </div>
-    <table style="margin-top:20px;width:100%;border-collapse:collapse;">
-      <tr><th>Year</th><th>Film</th><th>Role</th></tr>
-      <tr><td>1938</td><td>Algiers</td><td>Gaby</td></tr>
-      <tr><td>1949</td><td>Samson and Delilah</td><td>Delilah</td></tr>
-      <tr><td>1957</td><td>The Female Animal</td><td>Vanessa Windsor</td></tr>
+    <table>
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Film</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1938</td><td>Algiers</td><td>Gaby</td></tr>
+        <tr><td>1949</td><td>Samson and Delilah</td><td>Delilah</td></tr>
+        <tr><td>1957</td><td>The Female Animal</td><td>Vanessa Windsor</td></tr>
+      </tbody>
     </table>
   </section>
 
