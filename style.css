@@ -5,13 +5,21 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #656D6D;
+  background: #F5F9F8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #272727;
+  font-weight: 300;
+  margin: 20px 0;
 }
 
 .hero {
-  background: linear-gradient(135deg, #1e90ff, #e63946);
+  background: linear-gradient(135deg, #272727, #fcd088);
   color: #fff;
   height: 100vh;
   display: flex;
@@ -32,14 +40,20 @@ body {
 }
 
 .nav-links a {
-  color: #fff;
+  color: #272727;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #fcd088;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  color: #272727;
 }
 
 .hero-content {
@@ -50,17 +64,23 @@ body {
   align-items: center;
   text-align: center;
   padding: 20px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.4);
 }
 
 .btn {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background: #e63946;
-  color: #fff;
+  background: #fcd088;
+  color: #272727;
   text-decoration: none;
   border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background: #272727;
+  color: #fcd088;
 }
 
 .section {
@@ -79,7 +99,7 @@ body {
 .footer {
   text-align: center;
   padding: 20px;
-  background: #222;
+  background: #272727;
   color: #fff;
 }
 
