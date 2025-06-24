@@ -36,6 +36,169 @@
         <tr><td>15</td><td>Film</td><td>The Strange Woman (1946)</td><td>Film Noir Foundation</td><td>Schema.org</td></tr>
       </tbody>
     </table>
+<h2>Metadata Alignment</h2>
+<h3>WHO</h3>
+<table>
+  <thead>
+    <tr><th>Property</th><th>DCTerms</th><th>MMD</th><th>Schema.org</th><th>MARC21</th><th>CDWA</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Creator</td><td>creator</td><td>&lt;artist&gt;&lt;name&gt;</td><td>CreativeWork.creator</td><td>100 1#$a</td><td>Creator description</td></tr>
+    <tr><td>Publisher</td><td></td><td>publisher&lt;label&gt;</td><td>CreativeWork.publisher</td><td>264 #0$b</td><td>Creator identity</td></tr>
+    <tr><td>Contributor</td><td>contributor</td><td>&lt;name&gt;&lt;namePart&gt;</td><td>CreativeWork.contributor</td><td>700 1#$a</td><td>Creator Role</td></tr>
+    <tr><td>Institution</td><td>rightsHolder</td><td>N/A</td><td>CreativeWork.archivedAt</td><td>561 $5</td><td>Owner/Agent</td></tr>
+  </tbody>
+</table>
+<h3>WHERE</h3>
+<table>
+  <thead>
+    <tr><th>Property</th><th>DCTerms</th><th>MMD</th><th>Schema.org</th><th>MARC21</th><th>CDWA</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Place of Production</td><td>coverage.spatial</td><td>&lt;place-list&gt;&lt;place-element&gt;</td><td>Movie.countryOfOrigin</td><td>264 #0$a</td><td>Creation Place/Original Location</td></tr>
+    <tr><td>Current Location</td><td>LocationPeriodOrJurisdiction</td><td>N/A</td><td>Place</td><td>852 $a</td><td>Current Location Description</td></tr>
+    <tr><td>Place Depicted</td><td>coverage.spatial</td><td>N/A</td><td>CreativeWork.contentLocation</td><td>651 $a</td><td>Place/Location Label</td></tr>
+  </tbody>
+</table>
+<h3>WHEN</h3>
+<table>
+  <thead>
+    <tr><th>Property</th><th>DCTerms</th><th>MMD</th><th>Schema.org</th><th>MARC21</th><th>CDWA</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Creation Date</td><td>date.created</td><td>&lt;release&gt;&lt;date&gt;</td><td>CreativeWork.dateCreated</td><td>264 #0$c</td><td>Creation Date</td></tr>
+    <tr><td>Publication Date</td><td>date.issue</td><td>N/A</td><td>CreativeWork.datePublished</td><td>264 #1$c</td><td>Date Qualifier</td></tr>
+    <tr><td>Period Depicted</td><td>coverage.temporal</td><td>N/A</td><td>CreativeWork.temporalCoverage</td><td>045</td><td>Styles/Periods</td></tr>
+  </tbody>
+</table>
+<h3>WHAT</h3>
+<table>
+  <thead>
+    <tr><th>Property</th><th>DCTerms</th><th>MMD</th><th>Schema.org</th><th>MARC21</th><th>CDWA</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Title</td><td>title</td><td>&lt;release&gt;&lt;title&gt;</td><td>Thing.name</td><td>130 $a</td><td>Title Text</td></tr>
+    <tr><td>Identifier</td><td>identifier</td><td>&lt;track.id&gt;</td><td>Thing.identifier</td><td>020-024</td><td>Repository Numbers</td></tr>
+    <tr><td>Description</td><td>description</td><td>N/A</td><td>Thing.description</td><td>3XX</td><td>Descriptive Note</td></tr>
+    <tr><td>Subject</td><td></td><td>subject</td><td>CreativeWork.about</td><td>6XX</td><td>Subject Display</td></tr>
+    <tr><td>Language</td><td>language</td><td>&lt;work&gt;&lt;language-list&gt;</td><td>CreativeWork.inLanguage</td><td>041</td><td>Inscription Language</td></tr>
+    <tr><td>Technique</td><td>type</td><td>&lt;genre-list&gt;&lt;genre&gt;</td><td>CreativeWork.genre</td><td>340 $d</td><td>Materials/Techniques</td></tr>
+  </tbody>
+</table>
+<h2>RDF Triples</h2>
+<h3>PERSON</h3>
+<table>
+  <thead>
+    <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>HedyLamarr</td><td>rdf:type</td><td>foaf:Person</td></tr>
+    <tr><td>HedyLamarr</td><td>rdf:type</td><td>schema:Person</td></tr>
+    <tr><td>HedyLamarr</td><td>foaf:name</td><td>"Hedy Lamarr"</td></tr>
+    <tr><td>HedyLamarr</td><td>foaf:givenName</td><td>"Hedwig Eva Maria"</td></tr>
+    <tr><td>HedyLamarr</td><td>foaf:familyName</td><td>"Kiesler"</td></tr>
+    <tr><td>HedyLamarr</td><td>schema:alternateName</td><td>"Hedy Lamarr"</td></tr>
+    <tr><td>HedyLamarr</td><td>schema:birthDate</td><td>"1914-11-09"</td></tr>
+    <tr><td>HedyLamarr</td><td>schema:birthPlace</td><td>Vienna_Austria</td></tr>
+    <tr><td>HedyLamarr</td><td>schema:deathDate</td><td>"2000-01-19"</td></tr>
+    <tr><td>HedyLamarr</td><td>schema:deathPlace</td><td>AltamonteSprings_Florida</td></tr>
+    <tr><td>HedyLamarr</td><td>schema:nationality</td><td>"Austrian-American"</td></tr>
+    <tr><td>HedyLamarr</td><td>schema:occupation</td><td>"Actress"</td></tr>
+    <tr><td>HedyLamarr</td><td>schema:occupation</td><td>"Inventor"</td></tr>
+    <tr><td>HedyLamarr</td><td>schema:knows</td><td>GeorgeAntheil</td></tr>
+    <tr><td>HedyLamarr</td><td>schema:award</td><td>NationalInventorsHallOfFame_Award</td></tr>
+    <tr><td>HedyLamarr</td><td>schema:memberOf</td><td>MGM_Organization</td></tr>
+    <tr><td>HedyLamarr</td><td>schema:alumniOf</td><td>MaxReinhardtSeminary</td></tr>
+    <tr><td>HedyLamarr</td><td>schema:url</td><td>Wikipedia_HedyLamarr</td></tr>
+    <tr><td>HedyLamarr</td><td>schema:url</td><td>IMDb_HedyLamarr</td></tr>
+  </tbody>
+</table>
+<h3>INVENTION</h3>
+<table>
+  <thead>
+    <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>FrequencyHoppingSpreadSpectrum</td><td>rdf:type</td><td>schema:Intangible</td></tr>
+    <tr><td>FrequencyHoppingSpreadSpectrum</td><td>rdf:type</td><td>cidoc-crm:E28_Conceptual_Object</td></tr>
+    <tr><td>FrequencyHoppingSpreadSpectrum</td><td>schema:name</td><td>"Frequency-Hopping Spread Spectrum"</td></tr>
+    <tr><td>FrequencyHoppingSpreadSpectrum</td><td>schema:creator</td><td>HedyLamarr</td></tr>
+    <tr><td>FrequencyHoppingSpreadSpectrum</td><td>schema:creator</td><td>GeorgeAntheil</td></tr>
+    <tr><td>FrequencyHoppingSpreadSpectrum</td><td>schema:dateCreated</td><td>"1941"</td></tr>
+    <tr><td>FrequencyHoppingSpreadSpectrum</td><td>schema:description</td><td>"A method for securely controlling torpedoes..."</td></tr>
+    <tr><td>FrequencyHoppingSpreadSpectrum</td><td>schema:patent</td><td>US_Patent_2292387</td></tr>
+    <tr><td>FrequencyHoppingSpreadSpectrum</td><td>rdfs:subClassOf</td><td>SpreadSpectrumTechnology_Type</td></tr>
+  </tbody>
+</table>
+<h3>PATENT</h3>
+<table>
+  <thead>
+    <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>US_Patent_2292387</td><td>rdf:type</td><td>schema:Patent</td></tr>
+    <tr><td>US_Patent_2292387</td><td>rdf:type</td><td>bibo:Patent</td></tr>
+    <tr><td>US_Patent_2292387</td><td>schema:name</td><td>"Secret Communication System"</td></tr>
+    <tr><td>US_Patent_2292387</td><td>schema:identifier</td><td>"US 2,292,387"</td></tr>
+    <tr><td>US_Patent_2292387</td><td>schema:datePublished</td><td>"1942-08-11"</td></tr>
+    <tr><td>US_Patent_2292387</td><td>schema:assignee</td><td>National_Inventors_Council</td></tr>
+    <tr><td>US_Patent_2292387</td><td>ag:isSubjectOf</td><td>PatentAgreement_Concept</td></tr>
+    <tr><td>US_Patent_2292387</td><td>schema:url</td><td>"https://patents.google.com/patent/US2292387"</td></tr>
+  </tbody>
+</table>
+<h3>MOVIE</h3>
+<table>
+  <thead>
+    <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Ecstasy_Movie</td><td>rdf:type</td><td>schema:Movie</td></tr>
+    <tr><td>Ecstasy_Movie</td><td>dcterms:title</td><td>"Ecstasy"</td></tr>
+    <tr><td>Ecstasy_Movie</td><td>dcterms:language</td><td>"de"</td></tr>
+    <tr><td>Ecstasy_Movie</td><td>schema:actor</td><td>HedyLamarr</td></tr>
+    <tr><td>Ecstasy_Movie</td><td>schema:director</td><td>GustavMachaty</td></tr>
+    <tr><td>Ecstasy_Movie</td><td>schema:datePublished</td><td>"1933"</td></tr>
+    <tr><td>Ecstasy_Movie</td><td>schema:countryOfOrigin</td><td>Czechoslovakia</td></tr>
+  </tbody>
+</table>
+<h3>AWARD</h3>
+<table>
+  <thead>
+    <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>NationalInventorsHallOfFame_Award</td><td>rdf:type</td><td>schema:Award</td></tr>
+    <tr><td>NationalInventorsHallOfFame_Award</td><td>schema:name</td><td>"National Inventors Hall of Fame Inductee"</td></tr>
+    <tr><td>NationalInventorsHallOfFame_Award</td><td>schema:recipient</td><td>HedyLamarr</td></tr>
+    <tr><td>NationalInventorsHallOfFame_Award</td><td>schema:dateAwarded</td><td>"2014"</td></tr>
+  </tbody>
+</table>
+<h3>PLACE</h3>
+<table>
+  <thead>
+    <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Vienna_Austria</td><td>rdf:type</td><td>schema:Place</td></tr>
+    <tr><td>Vienna_Austria</td><td>schema:name</td><td>"Vienna"</td></tr>
+    <tr><td>Vienna_Austria</td><td>schema:containedInPlace</td><td>Austria</td></tr>
+  </tbody>
+</table>
+<h3>CREATIVE WORK ABOUT HEDY LAMARR</h3>
+<table>
+  <thead>
+    <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>HedysFolly_Book</td><td>rdf:type</td><td>schema:Book</td></tr>
+    <tr><td>HedysFolly_Book</td><td>dcterms:title</td><td>"Hedy's Folly: The Life and Breakthrough Inventions of Hedy Lamarr"</td></tr>
+    <tr><td>HedysFolly_Book</td><td>schema:creator</td><td>RichardRhodes</td></tr>
+    <tr><td>HedysFolly_Book</td><td>schema:about</td><td>HedyLamarr</td></tr>
+    <tr><td>HedysFolly_Book</td><td>schema:datePublished</td><td>"2011"</td></tr>
+    <tr><td>HedysFolly_Book</td><td>dcterms:language</td><td>"en"</td></tr>
+  </tbody>
+</table>
+
   </main>
   <footer>
     &copy; 2025 Hedy Lamarr Legacy Project
