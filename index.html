@@ -9,14 +9,21 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: #333; background: #fefaf6; }
     h1,h2,h3 { font-family: 'Josefin Sans', sans-serif; color: #333; font-weight: 700; margin: 20px 0; }
+    header, footer {
+      text-align: center;
+      padding: 20px;
+      background: #f5f2ed;
+    }
     .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #f5f2ed; }
     .logo { font-size: 1.5rem; font-weight: bold; color: #333; }
     .nav-links { list-style: none; display: flex; gap: 20px; }
     .nav-links a { color: #333; text-decoration: none; font-weight: bold; transition: color 0.3s; }
     .nav-links a:hover { color: #b98f6e; }
+    .nav-links a.active { color: #b98f6e; border-bottom: 2px solid #b98f6e; }
 
-    .btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #b98f6e; color: #fff; text-decoration: none; border-radius: 4px; transition: background 0.3s; }
-    .btn:hover { background: #8b6f50; }
+    .btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #b98f6e; color: #fff; text-decoration: none; border-radius: 4px; transition: background 0.3s ease, transform 0.2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(1px); }
 
     .hero {
       background: url('https://di-uploads-pod36.dealerinspire.com/everettcadillac/uploads/2023/03/Hedi-Lamar-math.jpg') center/cover no-repeat;
@@ -49,24 +56,7 @@
       border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    /* Plots */
-    .plots {
-      display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-top: 20px;
-    }
-    .plots img {
-      width: 100%; max-width: 600px; height: auto;
-      border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    /* Metadata table */
-    table {
-      border: 1px solid #ccc; margin-top: 20px; width: 100%;
-      border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden;
-    }
-    th, td { border: 1px solid #ccc; padding: 12px 16px; }
-    thead { background: #b98f6e; color: #fff; }
-
-    /* 2×2 grids */
+    /* Knowledge & Representation grids */
     .knowledge-grid,
     .representation-grid {
       display: grid;
@@ -81,13 +71,45 @@
       padding: 20px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      /* для reveal */
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
     }
-    .knowledge-card h3 { margin-bottom: 10px; }
-    .knowledge-card p  { font-size: 0.95rem; }
+    .knowledge-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .knowledge-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
 
-    footer {
-      text-align: center; padding: 20px;
-      background: #1a1a1a; color: #fff; margin-top: 40px;
+    /* плавная прокрутка по якорям */
+    html { scroll-behavior: smooth; }
+
+    /* back-to-top */
+    #back-to-top {
+      position: fixed; right: 20px; bottom: 20px;
+      padding: 10px; border: none; border-radius: 4px;
+      background: #b98f6e; color: #fff; cursor: pointer;
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.3s ease;
+    }
+    #back-to-top.show {
+      opacity: 1; visibility: visible;
+    }
+
+    /* для плотов, если они есть */
+    .plots img {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .plots img.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -97,13 +119,10 @@
     <div class="logo">Lamarr Legacy</div>
     <ul class="nav-links">
       <li><a href="#intro">Intro</a></li>
-      <li><a href="#films">Films</a></li>
+      <li><a href="#films">Selected Filmography</a></li>
       <li><a href="#inventor">Inventor</a></li>
       <li><a href="#knowledge">Knowledge Organization</a></li>
       <li><a href="#representation">Knowledge Representation</a></li>
-      <li><a href="#plots">Plots</a></li>
-      <li><a href="#metadata">Metadata</a></li>
-      <li><a href="#gallery">Gallery</a></li>
     </ul>
   </header>
 
@@ -112,9 +131,8 @@
     <div class="hero-content">
       <h1>Hedy Lamarr</h1>
       <p>Often called “The Most Beautiful Woman in Film,” Hedy Lamarr’s beauty and screen presence made her one of the most popular actresses of her day.
-        She was born Hedwig Eva Maria Kiesler on November 9, 1914 in Vienna, Austria. At 17 years old, Hedy starred in her first film, a German project called Geld auf der Strase. Hedy continued her film career by working on both German and Czechoslavakian productions. The 1932 German film Exstase brought her to the attention of Hollywood producers, and she soon signed a contract with MGM.
-        
-    </p>
+        She was born Hedwig Eva Maria Kiesler on November 9, 1914 in Vienna, Austria. At 17, she starred in her first film, a German project called <em>Geld auf der Straße</em>. 
+        The 1932 film <em>Ekstase</em> brought her to Hollywood, и далее…</p>
       <a href="#films" class="btn">Learn more</a>
     </div>
   </section>
@@ -145,8 +163,7 @@
   <section id="inventor" class="section bg-light container">
     <h2>Inventor</h2>
     <p>Beyond her acting career, Hedy Lamarr co-invented frequency-hopping spread spectrum technology with composer George Antheil. 
-      This technology, patented in 1942, aimed to create a secure communication system that could not be jammed. 
-      While initially intended for guiding torpedoes, it later became a foundational technology for modern wireless communication, including Wi-Fi, Bluetooth, and GPS.     </p>
+    Patented in 1942, it laid the groundwork for modern Wi-Fi, Bluetooth и GPS.</p>
     <img src="images/image.png" alt="Patent illustration" style="width:100%; border-radius:8px; margin-top:20px;">
   </section>
 
@@ -156,57 +173,58 @@
     <div class="knowledge-grid">
       <div class="knowledge-card">
         <h3>📘 E/R Model</h3>
-        <p>A representation of entities (people, texts, places) and their relationships in Lamarr's biography.</p>
+        <p>Representation of entities и отношений в биографии Ламарр.</p>
         <a href="e_r_model.html" class="btn">Learn More</a>
       </div>
       <div class="knowledge-card">
         <h3>🗂 Metadata Alignment</h3>
-        <p>Integration of vocabularies describing Lamarr-related items.</p>
+        <p>Интеграция словарей описания артефактов Ламарр.</p>
         <a href="metadata.html" class="btn">Learn More</a>
       </div>
       <div class="knowledge-card">
         <h3>📑 Theoretical Model</h3>
-        <p>A structured view of heritage resources reflecting Lamarr's life.</p>
+        <p>Структурированное представление ресурсов наследия.</p>
         <a href="theoretical.html" class="btn">Learn More</a>
       </div>
       <div class="knowledge-card">
         <h3>🧠 Conceptual Model</h3>
-        <p>Refined model using standards like CIDOC CRM and schema.org.</p>
+        <p>Использование стандартов CIDOC CRM и schema.org для интероперабельности.</p>
         <a href="conceptual.html" class="btn">Learn More</a>
       </div>
     </div>
   </section>
 
+  <!-- Knowledge Representation -->
   <section id="representation" class="section bg-light container">
     <h2>Knowledge Representation</h2>
     <div class="representation-grid">
       <div class="knowledge-card">
         <h3>📄 CSV Data Tables</h3>
-        <p>A collection of CSV files describing cultural heritage items related to Lamarr using shared vocabularies and linked data.</p>
-        <a href="s.html" class="btn">Download All CSV</a>
+        <p>CSV-файлы с данными о Ламарр через связанные словари.</p>
+        <a href="statistic_table.html" class="btn">Show Tables</a>
       </div>
       <div class="knowledge-card">
         <h3>💡 RDF</h3>
-        <p>RDF dataset generated from CSV and TEI/XML sources via Python scripts, based on a custom ontology.</p>
+        <p>Набор RDF-триплетов, сгенерированных из CSV и TEI/XML.</p>
         <a href="rdf_dataset.html" class="btn">View RDF Dataset</a>
       </div>
       <div class="knowledge-card">
         <h3>📝 TEI/XML Encodings</h3>
-        <p>Sample encodings of Lamarr’s works in TEI XML format, enriched with metadata and structure.</p>
+        <p>Образцы TEI-XML кодировок произведений Ламарр.</p>
         <a href="tei_xml.html" class="btn">View TEI XML</a>
       </div>
       <div class="knowledge-card">
         <h3>🔨 XML → HTML & RDF</h3>
-        <p>Transformations of TEI XML via XSLT and Python to styled HTML and Turtle RDF.</p>
+        <p>Преобразования TEI XML в HTML и Turtle RDF.</p>
         <a href="xml_html_rdf.html" class="btn">View Transformations</a>
       </div>
     </div>
   </section>
 
-
   <footer>
     &copy; 2025 Lamarr Legacy
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
