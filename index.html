@@ -1,173 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hedy Lamarr Legacy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lamarr Legacy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet"/>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: #333; background: #fefaf6; }
-    h1, h2, h3 { font-family: 'Josefin Sans', sans-serif; color: #333; font-weight: 700; margin: 20px 0; }
+    h1,h2,h3 { font-family: 'Josefin Sans', sans-serif; color: #333; font-weight: 700; margin: 20px 0; }
     .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #f5f2ed; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #333; }
     .nav-links { list-style: none; display: flex; gap: 20px; }
     .nav-links a { color: #333; text-decoration: none; font-weight: bold; transition: color 0.3s; }
     .nav-links a:hover { color: #b98f6e; }
-    .logo { font-size: 1.5rem; font-weight: bold; color: #333; }
-    .hero { background: url('https://di-uploads-pod36.dealerinspire.com/everettcadillac/uploads/2023/03/Hedi-Lamar-math.jpg') center/cover no-repeat; color: #fff; height: 80vh; display: flex; flex-direction: column; justify-content: center; text-align: center; position: relative; }
-    .hero::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1; }
-    .hero-content { max-width: 800px; margin: auto; padding: 40px 20px; position: relative; z-index: 2; }
+
     .btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #b98f6e; color: #fff; text-decoration: none; border-radius: 4px; transition: background 0.3s; }
     .btn:hover { background: #8b6f50; }
+
+    .hero {
+      background: url('https://di-uploads-pod36.dealerinspire.com/everettcadillac/uploads/2023/03/Hedi-Lamar-math.jpg') center/cover no-repeat;
+      color: #fff; height: 80vh;
+      display: flex; flex-direction: column; justify-content: center; text-align: center; position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6); z-index: 1;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 800px; margin: auto; padding: 40px 20px;
+    }
+
     .section { padding: 60px 20px; }
     .bg-light { background: #f9f6f1; }
     .container { max-width: 1000px; margin: auto; }
-    .work-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-    .work-list img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    /* New plots section */
-    .plots { display: flex; flex-direction: column; gap: 20px; align-items: center; margin-top: 20px; }
-    .plots img { width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    table { border: 1px solid #ccc; margin-top: 20px; width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; }
+
+    /* Films */
+    .work-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .work-list img {
+      width: 100%; height: auto;
+      border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Plots */
+    .plots {
+      display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-top: 20px;
+    }
+    .plots img {
+      width: 100%; max-width: 600px; height: auto;
+      border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Metadata table */
+    table {
+      border: 1px solid #ccc; margin-top: 20px; width: 100%;
+      border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden;
+    }
     th, td { border: 1px solid #ccc; padding: 12px 16px; }
-    thead { background: #b98f6e; color: white; }
-    footer { text-align: center; padding: 20px; background: #1a1a1a; color: #fff; }
+    thead { background: #b98f6e; color: #fff; }
+
+    /* 2×2 grids */
+    .knowledge-grid,
+    .representation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .knowledge-card {
+      background: #fff;
+      border: 1px solid #e0d6ca;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .knowledge-card h3 { margin-bottom: 10px; }
+    .knowledge-card p  { font-size: 0.95rem; }
+
+    footer {
+      text-align: center; padding: 20px;
+      background: #1a1a1a; color: #fff; margin-top: 40px;
+    }
   </style>
 </head>
 <body>
+
   <header class="navbar">
     <div class="logo">Lamarr Legacy</div>
     <ul class="nav-links">
       <li><a href="#intro">Intro</a></li>
       <li><a href="#films">Films</a></li>
       <li><a href="#inventor">Inventor</a></li>
-      <li><a href="#knowledge">Knowledge</a></li>
+      <li><a href="#knowledge">Knowledge Organization</a></li>
+      <li><a href="#representation">Knowledge Representation</a></li>
       <li><a href="#plots">Plots</a></li>
       <li><a href="#metadata">Metadata</a></li>
       <li><a href="#gallery">Gallery</a></li>
     </ul>
   </header>
 
+  <!-- Intro / Hero -->
   <section id="intro" class="hero">
     <div class="hero-content">
       <h1>Hedy Lamarr</h1>
-      <p>Often called "The Most Beautiful Woman in Film," Hedy Lamarr's beauty and screen presence made her one of the most popular actresses of her day.</p>
+      <p>Often called “The Most Beautiful Woman in Film,” Hedy Lamarr’s beauty and screen presence made her one of the most popular actresses of her day.
+        She was born Hedwig Eva Maria Kiesler on November 9, 1914 in Vienna, Austria. At 17 years old, Hedy starred in her first film, a German project called Geld auf der Strase. Hedy continued her film career by working on both German and Czechoslavakian productions. The 1932 German film Exstase brought her to the attention of Hollywood producers, and she soon signed a contract with MGM.
+        
+    </p>
       <a href="#films" class="btn">Learn more</a>
     </div>
   </section>
 
+  <!-- Films -->
   <section id="films" class="section container">
     <h2>Selected Filmography</h2>
     <div class="work-list">
       <div>
         <img src="https://www.hedylamarr.com/wp-content/uploads/2020/09/Algiers-1938-520x777.jpg" alt="Algiers poster">
-        <div class="work-content">
-          <h3>Algiers (1938)</h3>
-          <p>Hedy Lamarr stars as Gaby alongside Charles Boyer in her Hollywood debut.</p>
-        </div>
+        <h3>Algiers (1938)</h3>
+        <p>Hedy Lamarr stars as Gaby alongside Charles Boyer in her Hollywood debut.</p>
       </div>
       <div>
         <img src="https://www.hedylamarr.com/wp-content/uploads/2020/09/Boom-Town-1940-520x784.jpg" alt="Boom Town poster">
-        <div class="work-content">
-          <h3>Boom Town (1940)</h3>
-          <p>A drama about oil wildcatters starring Clark Gable, Spencer Tracy, and Hedy Lamarr.</p>
-        </div>
+        <h3>Boom Town (1940)</h3>
+        <p>A drama about oil wildcatters starring Clark Gable, Spencer Tracy, and Hedy Lamarr.</p>
       </div>
       <div>
         <img src="https://www.hedylamarr.com/wp-content/uploads/2020/09/White-Cargo-1942-520x787.jpg" alt="White Cargo poster">
-        <div class="work-content">
-          <h3>White Cargo (1942)</h3>
-          <p>Lamarr plays Tondelayo in a melodrama set in an African rubber plantation.</p>
-        </div>
+        <h3>White Cargo (1942)</h3>
+        <p>Lamarr plays Tondelayo in a melodrama set in an African rubber plantation.</p>
       </div>
     </div>
   </section>
 
+  <!-- Inventor -->
   <section id="inventor" class="section bg-light container">
     <h2>Inventor</h2>
-    <p>Beyond the screen, Lamarr co-invented a technology known as <strong>frequency-hopping spread spectrum</strong>.</p>
+    <p>Beyond her acting career, Hedy Lamarr co-invented frequency-hopping spread spectrum technology with composer George Antheil. 
+      This technology, patented in 1942, aimed to create a secure communication system that could not be jammed. 
+      While initially intended for guiding torpedoes, it later became a foundational technology for modern wireless communication, including Wi-Fi, Bluetooth, and GPS.     </p>
     <img src="images/image.png" alt="Patent illustration" style="width:100%; border-radius:8px; margin-top:20px;">
   </section>
 
+  <!-- Knowledge Organization -->
   <section id="knowledge" class="section container">
     <h2>Knowledge Organization</h2>
     <div class="knowledge-grid">
       <div class="knowledge-card">
         <h3>📘 E/R Model</h3>
-        <p>A representation of entities and relationships in Lamarr's biography.</p>
-        <a href="e_r_model.html" class="btn">Learn more</a>
+        <p>A representation of entities (people, texts, places) and their relationships in Lamarr's biography.</p>
+        <a href="e_r_model.html" class="btn">Learn More</a>
       </div>
       <div class="knowledge-card">
         <h3>🗂 Metadata Alignment</h3>
         <p>Integration of vocabularies describing Lamarr-related items.</p>
-        <a href="metadata.html" class="btn">Learn more</a>
+        <a href="metadata.html" class="btn">Learn More</a>
       </div>
       <div class="knowledge-card">
         <h3>📑 Theoretical Model</h3>
         <p>A structured view of heritage resources reflecting Lamarr's life.</p>
-        <a href="theoretical.html" class="btn">Learn more</a>
+        <a href="theoretical.html" class="btn">Learn More</a>
       </div>
       <div class="knowledge-card">
         <h3>🧠 Conceptual Model</h3>
         <p>Refined model using standards like CIDOC CRM and schema.org.</p>
-        <a href="conceptual.html" class="btn">Learn more</a>
+        <a href="conceptual.html" class="btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="representation" class="section bg-light container">
+    <h2>Knowledge Representation</h2>
+    <div class="representation-grid">
+      <div class="knowledge-card">
+        <h3>📄 CSV Data Tables</h3>
+        <p>A collection of CSV files describing cultural heritage items related to Lamarr using shared vocabularies and linked data.</p>
+        <a href="s.html" class="btn">Download All CSV</a>
       </div>
       <div class="knowledge-card">
-        <h3>📊 Metadata Tables</h3>
-        <p>Comprehensive tables of metadata and RDF triples.</p>
-        <a href="statistic_table.html" class="btn">View tables</a>
+        <h3>💡 RDF</h3>
+        <p>RDF dataset generated from CSV and TEI/XML sources via Python scripts, based on a custom ontology.</p>
+        <a href="rdf_dataset.html" class="btn">View RDF Dataset</a>
+      </div>
+      <div class="knowledge-card">
+        <h3>📝 TEI/XML Encodings</h3>
+        <p>Sample encodings of Lamarr’s works in TEI XML format, enriched with metadata and structure.</p>
+        <a href="tei_xml.html" class="btn">View TEI XML</a>
+      </div>
+      <div class="knowledge-card">
+        <h3>🔨 XML → HTML & RDF</h3>
+        <p>Transformations of TEI XML via XSLT and Python to styled HTML and Turtle RDF.</p>
+        <a href="xml_html_rdf.html" class="btn">View Transformations</a>
       </div>
     </div>
   </section>
 
-  <section id="plots" class="section bg-light container">
-    <h2>Plots</h2>
-    <div class="plots">
-      <a href="statistic_1.html"><img src="images/plot_1.png" alt="Plot 1"></a>
-      <a href="statistic_2.html"><img src="images/plot_2.png" alt="Plot 2"></a>
-      <a href="statistic_3.html"><img src="images/plot_3.png" alt="Plot 3"></a>
-      <a href="statistic_4.html"><img src="images/plot_4.png" alt="Plot 4"></a>
-      <a href="statistic_5.html"><img src="images/plot_5.png" alt="Plot 5"></a>
-    </div>
-    <h2 id="metadata">Metadata Analysis</h2>
-    <p><a href="statistic_table.html">Open table on a separate page</a></p>
-    <table>
-      <thead>
-        <tr><th>#</th><th>Item Type</th><th>Example</th><th>Provider</th><th>Standard</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>Film</td><td>Algiers (1938)</td><td>IMDb</td><td>Schema.org</td></tr>
-        <tr><td>2</td><td>Film</td><td>Samson and Delilah (1949)</td><td>Library of Congress</td><td>MARC21</td></tr>
-        <tr><td>3</td><td>Patent</td><td>Secret Communication System</td><td>USPTO</td><td>XML</td></tr>
-        <tr><td>4</td><td>Film</td><td>Come Live with Me (1941)</td><td>TCM</td><td>Schema.org</td></tr>
-        <tr><td>5</td><td>Film</td><td>Bombshell: The Hedy Lamarr Story (2017)</td><td>Europeana</td><td>EDM</td></tr>
-        <tr><td>6</td><td>Film</td><td>Boom Town (1940)</td><td>BFI</td><td>MARC21</td></tr>
-        <tr><td>7</td><td>Photograph</td><td>Hedy Lamarr Portrait (1940s)</td><td>Getty Images</td><td>VRA Core</td></tr>
-        <tr><td>8</td><td>Film</td><td>Ecstasy (1933)</td><td>Deutsche Kinemathek</td><td>CIDOC CRM</td></tr>
-        <tr><td>9</td><td>Biographical Text</td><td>Hedy Lamarr: The Most Beautiful Woman in Film</td><td>Internet Archive</td><td>Dublin Core</td></tr>
-        <tr><td>10</td><td>Film</td><td>Ziegfeld Girl (1941)</td><td>Wikidata</td><td>RDF</td></tr>
-        <tr><td>11</td><td>Archival Document</td><td>Hedy Lamarr’s FBI File</td><td>U.S. National Archives</td><td>EAC-CPF</td></tr>
-        <tr><td>12</td><td>Film</td><td>The Heavenly Body (1944)</td><td>MGM Archives / Warner Bros.</td><td>PBCore</td></tr>
-        <tr><td>13</td><td>Audio Recording</td><td>Frequency Hopping (Tech Demo)</td><td>Stanford University Archives</td><td>MODS</td></tr>
-        <tr><td>14</td><td>Film</td><td>Dishonored Lady (1947)</td><td>Internet Archive</td><td>Dublin Core</td></tr>
-        <tr><td>15</td><td>Film</td><td>The Strange Woman (1946)</td><td>Film Noir Foundation</td><td>Schema.org</td></tr>
-      </tbody>
-    </table>
-  </section>
 
-  <section id="representation" class="section container">
-    <h2>Knowledge Representation</h2>
-    <p>This section is reserved for future knowledge representation materials.</p>
-  </section>
-
-  <section id="extra" class="section bg-light container">
-    <h2>Additional Section</h2>
-    <p>Placeholder content for future expansion.</p>
-  </section>
-<footer>
-    &copy; 2025 Hedy Lamarr Legacy Project
+  <footer>
+    &copy; 2025 Lamarr Legacy
   </footer>
+
 </body>
 </html>
