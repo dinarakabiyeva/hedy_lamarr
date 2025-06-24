@@ -8,10 +8,18 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: #333; background: #fefaf6; }
-    header, footer { text-align: center; background: #f5f2ed; padding: 20px; }
-    nav { display: flex; justify-content: center; gap: 30px; }
-    nav a { font-family: 'Josefin Sans', sans-serif; font-weight: 700; color: #333; text-decoration: none; transition: color 0.3s; }
-    nav a:hover, nav a.active { color: #b98f6e; }
+    h1,h2,h3 { font-family: 'Josefin Sans', sans-serif; color: #333; font-weight: 700; margin: 20px 0; }
+    header, footer {
+      text-align: center;
+      padding: 20px;
+      background: #f5f2ed;
+    }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #f5f2ed; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #333; }
+    .nav-links { list-style: none; display: flex; gap: 20px; }
+    .nav-links a { color: #333; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+    .nav-links a:hover { color: #b98f6e; }
+    .nav-links a.active { color: #b98f6e; border-bottom: 2px solid #b98f6e; }
 
     .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
     h1 { font-family: 'Josefin Sans', sans-serif; margin-bottom: 10px; }
@@ -28,16 +36,17 @@
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html">INTRODUCTION</a>
-      <a href="index.html#films">FILMS</a>
-      <a href="index.html#bio">BIOGRAPHY</a>
-      <a href="index.html#knowledge">KNOWLEDGE ORG</a>
-      <a href="index.html#representation">KNOWLEDGE REP</a>
-      <a href="about.html" class="active">ABOUT</a>
-    </nav>
-  </header>
+    <header class="navbar">
+        <div class="logo">Lamarr Legacy</div>
+        <ul class="nav-links">
+          <li><a href="#intro">Intro</a></li>
+          <li><a href="#films">Selected Filmography</a></li>
+          <li><a href="#inventor">Inventor</a></li>
+          <li><a href="#knowledge">Knowledge Organization</a></li>
+          <li><a href="#representation">Knowledge Representation</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </header>
 
   <main class="container">
     <h1>About</h1>
@@ -51,7 +60,8 @@
       <div class="members">
         <div class="member">
           <img src="images/dinara.png" alt="Team member photo" />
-          <p>Dinara Erulan's Girl</p>
+          <p>Kabiyeva Dinara</p>
+          <p>graduated from the Faculty of Foreign Languages at Kazakh-American Free University (KAFU) in East Kazakhstan. Currently studying in the Digital Humanities and Digital Knowledge Master’s program at the University of Bologna. Interests include web development, interaction design, cultural heritage, and traveling.</p>
         </div>
         <div class="member">
           <img src="images/image.png" alt="Team member photo" />
